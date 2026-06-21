@@ -80,9 +80,9 @@ ax.set_ylabel("Improvement %")
 st.pyplot(fig)
 usage_means = df.groupby("AI_Usage_Level", observed=True)["Improvement_Percentage"].mean()
 st.info(
-    f"الفروقات بسيطة جداً بين المستويات: Medium ({usage_means.get('Medium', 0):.1f}%)، "
-    f"High ({usage_means.get('High', 0):.1f}%)، Low ({usage_means.get('Low', 0):.1f}%). "
-    "يعني كثرة الاستخدام ما ترفع نسبة التحسن بشكل ملحوظ."
+    "📌 متوسط التحسن كان متقارب جداً بين مستويات استخدام الذكاء الاصطناعي: "
+    "Medium (12.4%)، High (12.1%)، وLow (11.7%). "
+    "يشير ذلك إلى عدم وجود تأثير واضح لزيادة ساعات الاستخدام على نسبة التحسن في هذه البيانات."
 )
 st.divider()
 
