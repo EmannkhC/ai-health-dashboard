@@ -8,6 +8,13 @@ st.set_page_config(page_title="AI Impact on Health", page_icon="🩺", layout="w
 
 st.title("🩺 AI Impact on Health Dashboard")
 st.markdown("""
+<style>
+.rtl {
+    direction: rtl;
+    text-align: right;
+}
+</style>
+
 <div class="rtl">
 
 ### 📊 نظرة عامة على الداشبورد
@@ -21,6 +28,7 @@ st.markdown("""
 - 🔍 Diagnostic Assistant
 
 ### 🔎 التحليلات الرئيسية:
+
 - مقارنة الحالة الصحية **قبل وبعد** استخدام الأدوات.
 - تحليل العلاقة بين:
   - العمر 👥
