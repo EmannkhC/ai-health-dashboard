@@ -155,10 +155,22 @@ ax.set_ylabel("Percentage %")
 plt.setp(ax.get_xticklabels(), rotation=15)
 ax.legend(title="Satisfaction Level")
 st.pyplot(fig)
-st.info(
-    "كل الأدوات متقاربة جداً في توزيع الرضا (حوالي 28-31% رضا عالٍ، 28-30% منخفض، و~40% متوسط لكل أداة). "
-    "الرضا عن الأداة لا يرتبط بنوعها — يبدو إنه عامل شخصي أكثر من كونه خاصية بالأداة نفسها."
-)
+st.markdown("""
+<div style="direction: rtl; text-align: right; 
+            background-color: #e8f4fd; 
+            padding: 15px; 
+            border-radius: 10px;">
+
+📌 جميع الأدوات أظهرت توزيعاً متقارباً جداً في مستويات الرضا:
+<br>
+<b>28-31%</b> رضا عالٍ، <b>28-30%</b> رضا منخفض، وحوالي <b>40%</b> رضا متوسط لكل أداة.
+
+<br>
+يشير ذلك إلى أن مستوى الرضا لا يرتبط بشكل واضح بنوع الأداة، 
+وقد يكون مرتبطاً بعوامل شخصية وتجربة المستخدم أكثر من خصائص الأداة نفسها.
+
+</div>
+""", unsafe_allow_html=True)
 st.divider()
 
 st.subheader("🏃 متوسط نسبة التحسن حسب مستوى النشاط الرياضي (Average Improvement % by Exercise Level)")
