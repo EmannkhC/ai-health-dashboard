@@ -41,7 +41,7 @@ df = load_data()
 sns.set_style("whitegrid")
 
 st.subheader("👥 توزيع الأعمار (Age Distribution of Participants)")
-fig, ax = plt.subplots(figsize=(8, 5))
+fig, ax = plt.subplots(figsize=(6, 4))
 sns.histplot(df["Age"], bins=20, kde=True, color="#66c2a5", ax=ax)
 ax.set_title("Age Distribution of Participants")
 ax.set_xlabel("Age")
@@ -54,7 +54,7 @@ st.info(
 st.divider()
 
 st.subheader("⚙️ نسبة التحسن حسب مستوى استخدام الذكاء الاصطناعي (Improvement % by AI Usage Level)")
-fig, ax = plt.subplots(figsize=(8, 5))
+fig, ax = plt.subplots(figsize=(6, 4))
 sns.boxplot(data=df, x="AI_Usage_Level", y="Improvement_Percentage", hue="AI_Usage_Level",
             palette="Set2", legend=False, ax=ax)
 ax.set_title("Improvement % by AI Usage Level")
@@ -71,7 +71,7 @@ st.divider()
 
 st.subheader("🧠 متوسط نسبة التحسن حسب نوع أداة الذكاء الاصطناعي (Average Improvement % by AI Tool Type)")
 order_tool = df.groupby("AI_Tool_Type", observed=True)["Improvement_Percentage"].mean().sort_values(ascending=False).index
-fig, ax = plt.subplots(figsize=(8, 5))
+fig, ax = plt.subplots(figsize=(6, 4))
 sns.barplot(data=df, x="AI_Tool_Type", y="Improvement_Percentage", hue="AI_Tool_Type",
             order=order_tool, palette="Set2", errorbar=None, legend=False, ax=ax)
 ax.set_title("Average Improvement % by AI Tool Type")
@@ -104,7 +104,7 @@ st.info(
 st.divider()
 
 st.subheader("🏃 متوسط نسبة التحسن حسب مستوى النشاط الرياضي (Average Improvement % by Exercise Level)")
-fig, ax = plt.subplots(figsize=(8, 5))
+fig, ax = plt.subplots(figsize=(6, 4))
 sns.barplot(data=df, x="Exercise_Level", y="Improvement_Percentage", hue="Exercise_Level",
             palette="Set2", errorbar=None, legend=False, ax=ax)
 ax.set_title("Average Improvement % by Exercise Level")
