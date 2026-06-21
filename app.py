@@ -124,11 +124,25 @@ ax.set_ylabel("Average Improvement %")
 plt.setp(ax.get_xticklabels(), rotation=15)
 st.pyplot(fig)
 tool_means = df.groupby("AI_Tool_Type", observed=True)["Improvement_Percentage"].mean().sort_values(ascending=False)
-st.info(
-    f"{tool_means.index[0]} في المقدمة ({tool_means.iloc[0]:.1f}%)، تليها أدوات متقاربة جداً "
-    f"({tool_means.iloc[1]:.1f}% - {tool_means.iloc[2]:.1f}%)، و{tool_means.index[-1]} الأقل "
-    f"({tool_means.iloc[-1]:.1f}%). الفروقات بين الأدوات الأربع صغيرة جداً."
-)
+st.markdown(f"""
+<div style="direction: rtl; text-align: right; 
+            background-color: #e8f4fd; 
+            padding: 15px; 
+            border-radius: 10px;">
+
+📌 أداة <b>{tool_means.index[0]}</b> سجلت أعلى متوسط تحسن بنسبة 
+<b>{tool_means.iloc[0]:.1f}%</b>، تليها باقي الأدوات بنتائج متقاربة جداً 
+(<b>{tool_means.iloc[1]:.1f}% - {tool_means.iloc[2]:.1f}%</b>).
+
+<br>
+بينما سجلت أداة <b>{tool_means.index[-1]}</b> أقل متوسط تحسن بنسبة 
+<b>{tool_means.iloc[-1]:.1f}%</b>.
+
+<br>
+الفروقات بين الأدوات الأربع بسيطة جداً، مما يشير إلى عدم وجود اختلاف كبير في التأثير بين أنواع الأدوات.
+
+</div>
+""", unsafe_allow_html=True)
 st.divider()
 
 st.subheader("😀 توزيع مستوى الرضا حسب نوع الأداة (Satisfaction Level Distribution by AI Tool Type)")
