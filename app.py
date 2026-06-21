@@ -113,8 +113,8 @@ ax.set_ylabel("Average Improvement %")
 st.pyplot(fig)
 exercise_means = df.groupby("Exercise_Level", observed=True)["Improvement_Percentage"].mean()
 st.info(
-    f"نتيجة غير متوقعة: Sedentary سجلوا أعلى متوسط تحسن ({exercise_means.get(\'Sedentary\', 0):.1f}%)، "
-    f"يليهم Active ({exercise_means.get(\'Active\', 0):.1f}%)، ثم Moderate ({exercise_means.get(\'Moderate\', 0):.1f}%). "
+    f"نتيجة غير متوقعة: Sedentary سجلوا أعلى متوسط تحسن ({exercise_means.get('Sedentary', 0):.1f}%)، "
+    f"يليهم Active ({exercise_means.get('Active', 0):.1f}%)، ثم Moderate ({exercise_means.get('Moderate', 0):.1f}%). "
     "ما فيه علاقة منطقية تصاعدية بين النشاط الرياضي والتحسن في هذه البيانات."
 )
 st.divider()
