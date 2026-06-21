@@ -89,7 +89,7 @@ st.divider()
 
 st.subheader("😀 توزيع مستوى الرضا حسب نوع الأداة (Satisfaction Level Distribution by AI Tool Type)")
 ct = pd.crosstab(df["AI_Tool_Type"], df["Satisfaction_Level"], normalize="index") * 100
-fig, ax = plt.subplots(figsize=(9, 5))
+fig, ax = plt.subplots(figsize=(6, 4))
 ct.plot(kind="bar", stacked=True, colormap="coolwarm", ax=ax)
 ax.set_title("Satisfaction Level Distribution by AI Tool Type")
 ax.set_xlabel("AI Tool Type")
