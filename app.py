@@ -148,21 +148,11 @@ ax.set_xlabel("Exercise Level")
 ax.set_ylabel("Average Improvement %")
 st.pyplot(fig)
 exercise_means = df.groupby("Exercise_Level", observed=True)["Improvement_Percentage"].mean()
-st.markdown("""
-<div style="direction: rtl; text-align: right; 
-            background-color: #e8f4fd; 
-            padding: 15px; 
-            border-radius: 10px;">
-
-📌 أداة <b>Fitness Tracker</b> سجلت أعلى متوسط تحسن بنسبة <b>12.4%</b>، 
-بينما كانت باقي الأدوات متقاربة جداً في النتائج (<b>12.2% - 12.1%</b>).
-
-<br>
-وسجلت <b>Telemedicine</b> أقل متوسط تحسن بنسبة <b>11.7%</b>، 
-مما يشير إلى أن الفروقات بين الأدوات الأربع بسيطة جداً.
-
-</div>
-""", unsafe_allow_html=True)
+st.info(
+    f"نتيجة غير متوقعة: Sedentary سجلوا أعلى متوسط تحسن ({exercise_means.get('Sedentary', 0):.1f}%)، "
+    f"يليهم Active ({exercise_means.get('Active', 0):.1f}%)، ثم Moderate ({exercise_means.get('Moderate', 0):.1f}%). "
+    "ما فيه علاقة منطقية تصاعدية بين النشاط الرياضي والتحسن في هذه البيانات."
+)
 st.divider()
 
 st.subheader("📌 الخلاصة العامة")
