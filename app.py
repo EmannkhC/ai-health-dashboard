@@ -64,10 +64,19 @@ ax.set_title("Age Distribution of Participants")
 ax.set_xlabel("Age")
 ax.set_ylabel("Number of Participants")
 st.pyplot(fig)
-st.info(
-    f"متوسط العمر {df['Age'].mean():.1f} سنة، والمدى من {df['Age'].min()} إلى {df['Age'].max()}. "
-    "التوزيع متوازن نسبياً بين الفئات العمرية بدون تركّز واضح في فئة معينة."
-)
+st.markdown("""
+<div style="direction: rtl; text-align: right; 
+            background-color: #e8f4fd; 
+            padding: 15px; 
+            border-radius: 10px;">
+
+📌 متوسط العمر للمشاركين هو <b>48.8 سنة</b>، ويتراوح العمر بين <b>18 إلى 79 سنة</b>.
+
+<br>
+يوضح توزيع الأعمار توازناً نسبياً بين الفئات العمرية المختلفة بدون وجود تركّز واضح في فئة معينة.
+
+</div>
+""", unsafe_allow_html=True)
 st.divider()
 
 st.subheader("⚙️ نسبة التحسن حسب مستوى استخدام الذكاء الاصطناعي (Improvement % by AI Usage Level)")
