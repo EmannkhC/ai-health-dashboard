@@ -48,7 +48,7 @@ ax.set_xlabel("Age")
 ax.set_ylabel("Number of Participants")
 st.pyplot(fig)
 st.info(
-    f"متوسط العمر {df[\'Age\'].mean():.1f} سنة، والمدى من {df[\'Age\'].min()} إلى {df[\'Age\'].max()}. "
+    f"متوسط العمر {df['Age'].mean():.1f} سنة، والمدى من {df['Age'].min()} إلى {df['Age'].max()}. "
     "التوزيع متوازن نسبياً بين الفئات العمرية بدون تركّز واضح في فئة معينة."
 )
 st.divider()
