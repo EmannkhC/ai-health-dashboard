@@ -182,11 +182,24 @@ ax.set_xlabel("Exercise Level")
 ax.set_ylabel("Average Improvement %")
 st.pyplot(fig)
 exercise_means = df.groupby("Exercise_Level", observed=True)["Improvement_Percentage"].mean()
-st.info(
-    f"نتيجة غير متوقعة: Sedentary سجلوا أعلى متوسط تحسن ({exercise_means.get('Sedentary', 0):.1f}%)، "
-    f"يليهم Active ({exercise_means.get('Active', 0):.1f}%)، ثم Moderate ({exercise_means.get('Moderate', 0):.1f}%). "
-    "ما فيه علاقة منطقية تصاعدية بين النشاط الرياضي والتحسن في هذه البيانات."
-)
+st.markdown(f"""
+<div style="direction: rtl; text-align: right; 
+            background-color: #e8f4fd; 
+            padding: 15px; 
+            border-radius: 10px;">
+
+📌 نتيجة غير متوقعة: سجلت فئة <b>Sedentary</b> أعلى متوسط تحسن بنسبة 
+<b>{exercise_means.get('Sedentary', 0):.1f}%</b>.
+
+<br>
+تليها فئة <b>Active</b> بنسبة <b>{exercise_means.get('Active', 0):.1f}%</b>،
+ثم فئة <b>Moderate</b> بنسبة <b>{exercise_means.get('Moderate', 0):.1f}%</b>.
+
+<br>
+يشير ذلك إلى عدم وجود علاقة تصاعدية واضحة بين مستوى النشاط الرياضي ونسبة التحسن في هذه البيانات.
+
+</div>
+""", unsafe_allow_html=True)
 st.divider()
 
 st.subheader("📌 الخلاصة العامة")
