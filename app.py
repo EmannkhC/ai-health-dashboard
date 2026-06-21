@@ -8,6 +8,8 @@ st.set_page_config(page_title="AI Impact on Health", page_icon="🩺", layout="w
 
 st.title("🩺 AI Impact on Health Dashboard")
 st.markdown("""
+<div class="rtl">
+
 ### 📊 نظرة عامة على الداشبورد
 
 تستعرض هذه الداشبورد نتائج دراسة شملت **5000 مشارك** لتحليل تأثير أدوات الذكاء الاصطناعي الصحية على المؤشرات الصحية للمستخدمين.
@@ -28,7 +30,9 @@ st.markdown("""
   - مستوى رضا المستخدمين 😊
 
 الهدف هو فهم مدى ارتباط استخدام أدوات الذكاء الاصطناعي بتحسين النتائج الصحية.
-""")
+
+</div>
+""", unsafe_allow_html=True)
 st.divider()
 
 @st.cache_data
