@@ -79,11 +79,21 @@ ax.set_xlabel("AI Usage Level")
 ax.set_ylabel("Improvement %")
 st.pyplot(fig)
 usage_means = df.groupby("AI_Usage_Level", observed=True)["Improvement_Percentage"].mean()
-st.info(
-    "📌 متوسط التحسن كان متقارب جداً بين مستويات استخدام الذكاء الاصطناعي: "
-    "Medium (12.4%)، High (12.1%)، وLow (11.7%). "
-    "يشير ذلك إلى عدم وجود تأثير واضح لزيادة ساعات الاستخدام على نسبة التحسن في هذه البيانات."
-)
+st.markdown("""
+<div style="direction: rtl; text-align: right; 
+            background-color: #e8f4fd; 
+            padding: 15px; 
+            border-radius: 10px;">
+
+📌 متوسط التحسن كان متقارباً جداً بين مستويات استخدام الذكاء الاصطناعي:
+<br>
+Medium (12.4%)، High (12.1%)، وLow (11.7%).
+
+<br>
+يشير ذلك إلى عدم وجود تأثير واضح لزيادة ساعات الاستخدام على نسبة التحسن في هذه البيانات.
+
+</div>
+""", unsafe_allow_html=True)
 st.divider()
 
 st.subheader("🧠 متوسط نسبة التحسن حسب نوع أداة الذكاء الاصطناعي (Average Improvement % by AI Tool Type)")
